@@ -1,0 +1,270 @@
+body{
+    display: flex;
+    flex-direction: row;
+}
+
+.video-grid {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+    padding: 0.5rem;
+    margin: 0.8rem;
+    background-color: rgb(223, 219, 209);
+    /*make the grid fill all the height of its parent*/
+    height: 100%;
+    position: relative;
+}
+
+.video-grid:empty {
+    display: block;
+    text-align: center;
+    color: rgb(156, 153, 146);
+    font-size: x-large;
+    /*height: 360px;*/
+}
+
+.video-grid:empty::before {
+    content: "No one else is connected!";
+}
+
+/*style each of the grid cells*/
+[grid-cell] {
+    position: absolute;
+    border: 1px solid #444;
+    width: 150px;
+    height: 150px;
+}
+
+.video-item {
+    background-color: rgb(223, 219, 209);
+    text-align: center;
+    padding: 5px;
+    box-shadow: none !important;
+
+    /*align the name tag, video element and the visualiser in the center*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /*resize the div wrapping the video and canvas elements*/
+    max-width: 200px;
+    max-height: 285px;
+    margin: auto;
+
+    /*change mouse cursor on hover over the div*/
+    cursor: move;
+
+    /*required for dragging*/
+    position: absolute;
+}
+
+/*properties for the user's own video showing in the toolbox in the bottom-right corner*/
+.video-item-local {
+    text-align: center;
+    padding: 5px;
+    box-shadow: none !important;
+
+    /*align the name tag, video element and the visualiser in the center*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /*resize the div wrapping the video and canvas elements*/
+    max-width: 200px;
+    max-height: 285px;
+    margin: auto;
+}
+
+.vid-wrapper {
+    background-color: rgb(223, 219, 209);
+    padding: 0;
+}
+
+canvas {
+    /*add border radius to the canvas (visualiser) element to fix the ugly corners*/
+    border-radius: 5%;
+}
+
+video {
+    /*add border-radius to the video element to fix the ugly corners*/
+    border-radius: 5%;
+}
+
+/* align the panning slider at the center, right below the remote stream */
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* align the frequency graph and the button in the center and on top of each other*/
+.analyser-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* separate the frequency graph from the "Enable VAD" button a bit */
+.analyser-wrapper button {
+    margin-top: 5px;
+}
+
+/* make the value of the panner closer to the slider */
+.slider-wrapper p {
+    margin-top: 0;
+}
+
+/* make the current vad status display in italics */
+span {
+    font-style: italic;
+}
+
+.display-name {
+    color: #17252A;
+    font-family: sans-serif;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+#control_box {
+    background-color: rgb(255, 255, 255);
+    /*height: 110px;*/
+    width: 7%;
+    /*margin: 1rem 0px 0px 0px;*/
+    padding: 0.25rem;
+    /* position the control box at the bottom of the page always */
+    /*position: absolute;*/
+    left: 0;
+    bottom: 0;
+    display: flex;
+    border-radius: 10px;
+    margin-right: 100px;
+    margin-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.video-grid-wrapper {
+    /* take some more space from the body */
+    height: 50%;
+}
+
+/* adjust colours for control box video (my own video) */
+.control-box .video-item {
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+}
+
+.control-box .vid-wrapper {
+    background-color: rgb(255, 255, 255);
+}
+
+
+/* drop zone settings (grid that a remote can be dragged/dropped from/into*/
+.drop-zone-c1 {
+    width: 205px;
+    height: 270px;
+    float: left;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed rebeccapurple;
+}
+
+.drop-zone-c2 {
+    width: 205px;
+    height: 270px;
+    float: left;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed cornflowerblue;
+}
+
+.drop-zone-c3 {
+    width: 205px;
+    height: 270px;
+    float: left;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed greenyellow;
+}
+
+.drop-zone-c4 {
+    width: 205px;
+    height: 270px;
+    float: left;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed orange;
+}
+
+.drop-zone-c5 {
+    width: 205px;
+    height: 270px;
+    float: left;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed aquamarine;
+}
+
+.drop-zone-c1, .drop-zone-c2, .drop-zone-c3, .drop-zone-c4, .drop-zone-c5 {
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
+/* make the columns be positioned horizontally, one after the other */
+.col-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+}
+
+/*position each of the cells from each column vertically*/
+.col-remote {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+/* styling when the drop zone is hovered over*/
+.drop-zone--over {
+    opacity: 0.5;
+}
+
+
+/* style the buttons in the toolbox */
+.d-flex{
+    flex-direction: column;
+}
+
+/* ================================================== */
+
+#local_vid {
+    max-height: 80px;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #control_box .btn-lg {
+        padding: 5px 12px 5px 12px;
+    }
+}

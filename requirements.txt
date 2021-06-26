@@ -1,0 +1,6 @@
+Flask==1.1.2
+Flask-SocketIO==4.3.2
+python-engineio==3.13.2
+python-socketio==4.6.0
+gunicorn
+eventlet==0.30.2

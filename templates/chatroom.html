@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- icon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/images/favicon.ico') }}">
+
+    <!-- socketio -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"
+            integrity="sha512-v8ng/uGxkge3d1IJuEo6dJP8JViyvms0cly9pnbfRxT6/31c3dRWxIiwGnMSWwZjHKOuY3EVmijs7k1jz/9bLA=="
+            crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- google Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/chatroom.css')}}">
+
+
+    <script type="text/javascript">
+        var myRoomID = "{{room_id}}";
+        var myName = "{{display_name}}";
+        var audioMuted = "{{mute_audio}}" == "1";
+        var videoMuted = "{{mute_video}}" == "1";
+        console.log(">> {{mute_audio}}, {{mute_video}}", audioMuted, videoMuted);
+    </script>
+
+
+    <!-- add filenames of scripts that will be needed -->
+    <script src="{{url_for('static', filename='./javascript/client-side/features/resize.js')}}"></script>
+    <script src="{{url_for('static', filename='./javascript/client-side/features/drag.js')}}"></script>
+    <script src="{{url_for('static', filename='./javascript/client-side/features/disable_features.js')}}"></script>
+    <script src="{{url_for('static', filename='./javascript/client-side/features/misc.js')}}"></script>
+    <script src="{{url_for('static', filename='./javascript/client-side/features/panning.js')}}"></script>
+    <script src="{{url_for('static', filename='./javascript/client-side/features/analyser.js')}}"></script>
+    <script src="{{url_for('static', filename='./javascript/server-side/chatroom_ui.js')}}"></script>
+    <script src="{{url_for('static', filename='./javascript/server-side/chatroom_networking.js')}}"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Chat [{{room_id}}]</title>
+</head>
+<body>
+
+<div id="control_box" class="row control-box shadow">
+    <div class="col-7 col-md-8 col-lg-9 d-flex justify-content-around align-items-center button-box">
+
+        <button title="Microphone" id="bttn_mute" class="btn btn-lg btn-outline-secondary rounded-circle">
+                    <span id="mute_icon" class="material-icons pt-2">
+                        mic
+                    </span>
+        </button>
+        <button title="Video" id="bttn_vid_mute" class="btn btn-lg btn-outline-secondary rounded-circle">
+                    <span id="vid_mute_icon" class="material-icons pt-2">
+                        videocam
+                    </span>
+        </button>
+        <button title="End Call" id="call_end" class="btn btn-lg btn-danger rounded-circle">
+                    <span class="material-icons pt-2">
+                        call_end
+                    </span>
+        </button>
+    </div>
+    <div id="div_local_vid" class="col-5 col-md-4 col-lg-3 video-item-local ml-auto">
+        <div class="vid-wrapper">
+            <video id="local_vid" autoplay muted></video>
+        </div>
+    </div>
+</div>
+
+<div class="col-wrapper">
+    <div class="column-1 col-remote">
+        <div class="drop-zone-c1 drop-zone" id="column-1.1"></div>
+        <div class="drop-zone-c1 drop-zone" id="column-1.2"></div>
+        <div class="drop-zone-c1 drop-zone" id="column-1.3"></div>
+    </div>
+    <div class="column-2 col-remote">
+        <div class="drop-zone-c2 drop-zone" id="column-2.1"></div>
+        <div class="drop-zone-c2 drop-zone" id="column-2.2"></div>
+        <div class="drop-zone-c2 drop-zone" id="column-2.3"></div>
+    </div>
+    <div class="column-3 col-remote">
+        <div class="drop-zone-c3 drop-zone" id="column-3.1"></div>
+        <div class="drop-zone-c3 drop-zone" id="column-3.2"></div>
+        <div class="drop-zone-c3 drop-zone" id="column-3.3"></div>
+    </div>
+    <div class="column-4 col-remote">
+        <div class="drop-zone-c4 drop-zone" id="column-4.1"></div>
+        <div class="drop-zone-c4 drop-zone" id="column-4.2"></div>
+        <div class="drop-zone-c4 drop-zone" id="column-4.3"></div>
+    </div>
+    <div class="column-5 col-remote">
+        <div class="drop-zone-c5 drop-zone" id="column-5.1"></div>
+        <div class="drop-zone-c5 drop-zone" id="column-5.2"></div>
+        <div class="drop-zone-c5 drop-zone" id="column-5.3"></div>
+    </div>
+</div>
+
+</body>
+</html>
