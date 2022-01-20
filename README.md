@@ -31,9 +31,9 @@ Different versions of the prototype can be tried out using the following: <br/>
 
 A video demo and a scientific report can be seen via the following links:
 
-`Video Demo`: [Demo](https://drive.google.com/file/d/1nQNu6u9ZaqewbEN802YMnNR_mxZC2sTS/view?usp=sharing){:target="_blank" rel="noopener"}
+`Video Demo`: [Demo](https://drive.google.com/file/d/1nQNu6u9ZaqewbEN802YMnNR_mxZC2sTS/view?usp=sharing){:target="#"}
 
-`Report`: [Report](https://drive.google.com/file/d/1gw3Qevqzk-NegpM9dR7ZfqJaUukkm-O0/view?usp=sharing){:target="_blank" rel="noopener"}
+`Report`: [Report](https://drive.google.com/file/d/1gw3Qevqzk-NegpM9dR7ZfqJaUukkm-O0/view?usp=sharing){:target="#"}
 
 Installation
 -------------
