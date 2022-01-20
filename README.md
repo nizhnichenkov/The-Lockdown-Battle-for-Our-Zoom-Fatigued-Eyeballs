@@ -29,7 +29,7 @@ Different versions of the prototype can be tried out using the following: <br/>
 `MVP Demo`: https://webrtc-mesh-py.herokuapp.com/ <br/>
 `Final Version Demo`: https://webrtc-mesh-py-adv.herokuapp.com/
 
-A video demo and a scientific report can seen via the following links:
+A video demo and a scientific report can be seen via the following links:
 
 `Video Demo`: [Demo](https://drive.google.com/file/d/1nQNu6u9ZaqewbEN802YMnNR_mxZC2sTS/view?usp=sharing)
 
