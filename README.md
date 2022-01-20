@@ -28,6 +28,8 @@ A [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API) video ch
 Different versions of the prototype can be tried out using the following: <br/>
 `MVP Demo`: https://webrtc-mesh-py.herokuapp.com/ <br/>
 `Final Version Demo`: https://webrtc-mesh-py-adv.herokuapp.com/
+[Video Demo](https://drive.google.com/file/d/1nQNu6u9ZaqewbEN802YMnNR_mxZC2sTS/view?usp=sharing)
+[Report](https://drive.google.com/file/d/1gw3Qevqzk-NegpM9dR7ZfqJaUukkm-O0/view?usp=sharing)
 
 
 Installation
